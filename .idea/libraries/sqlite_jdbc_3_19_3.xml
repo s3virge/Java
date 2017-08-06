@@ -2,6 +2,8 @@
   <library name="sqlite-jdbc-3.19.3">
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/../sqlite-jdbc-3.19.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../jsoup-1.10.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../commons-io-2.5.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
