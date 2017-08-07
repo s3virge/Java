@@ -20,7 +20,7 @@ public class Main extends Application {
 
         window = primaryStage;
         window.setTitle("Address");
-        //window.setResizable(false);
+        window.setResizable(false);
 
         initRootLayout();
         showPersonOverview();
