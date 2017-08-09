@@ -6,8 +6,8 @@ package JavaFX.JFXDataBase.View;
 
 import JavaFX.JFXDataBase.MainApp;
 import JavaFX.JFXDataBase.Model.Person;
-import JavaFX.JFXDataBase.Util.DateUtil;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -25,13 +25,13 @@ public class PersonOverviewController {
     @FXML
     private Label lastNameLabel;
     @FXML
-    private Label streetLabel;
+    private Label phoneNumber;
     @FXML
-    private Label postalCodeLabel;
+    private Label adress;
     @FXML
-    private Label cityLabel;
-    @FXML
-    private Label birthdayLabel;
+    private Label note;
+//    @FXML
+//    private Label birthdayLabel;
 
     // Reference to the main application.
     private MainApp mainApp;
@@ -51,16 +51,16 @@ public class PersonOverviewController {
     private void initialize() {
         // Initialize the person table with the two columns.
         firstNameColumn.setCellValueFactory(
-                cellData -> cellData.getValue().firstNameProperty());
+                cellData -> cellData.getValue().propFirstNameProperty());
         lastNameColumn.setCellValueFactory(
-                cellData -> cellData.getValue().lastNameProperty());
+                cellData -> cellData.getValue().propLastNameProperty());
 
         // Clear person details.
         showPersonDetails(null);
 
-      /*  // Listen for selection changes and show the person details when changed.
+       // Listen for selection changes and show the person details when changed.
         personTable.getSelectionModel().selectedItemProperty().addListener(
-                (observable, oldValue, newValue) -> showPersonDetails(newValue));*/
+                (observable, oldValue, newValue) -> showPersonDetails(newValue));
     }
 
     /**
@@ -84,12 +84,12 @@ public class PersonOverviewController {
     private void showPersonDetails(Person person) {
         if (person != null) {
             // Fill the labels with info from the person object.
-            firstNameLabel.setText(person.getFirstName());
-            lastNameLabel.setText(person.getLastName());
-            streetLabel.setText(person.getStreet());
-            postalCodeLabel.setText(Integer.toString(person.getPostalCode()));
-            cityLabel.setText(person.getCity());
-            birthdayLabel.setText(DateUtil.format(person.getBirthday()));
+            firstNameLabel.setText(person.getPropFirstName());
+            lastNameLabel.setText(person.getPropLastName());
+            phoneNumber.setText(person.getPropPhoneNumber());
+            adress.setText(person.getPropAdress());
+            note.setText(person.getPropNote());
+//            birthdayLabel.setText(DateUtil.format(person.getBirthday()));
 
             //////////////////////////////
             /* У меня совсем другие поля*/
@@ -99,10 +99,31 @@ public class PersonOverviewController {
             // Person is null, remove all the text.
             firstNameLabel.setText("");
             lastNameLabel.setText("");
-            streetLabel.setText("");
-            postalCodeLabel.setText("");
-            cityLabel.setText("");
-            birthdayLabel.setText("");
+            phoneNumber.setText("");
+            adress.setText("");
+            note.setText("");
+//            birthdayLabel.setText("");
+        }
+    }
+
+    /**
+     * Called when the user clicks on the delete button.
+     */
+    @FXML
+    private void handleDeletePerson() {
+        int selectedIndex = personTable.getSelectionModel().getSelectedIndex();
+        if (selectedIndex >= 0) {
+            personTable.getItems().remove(selectedIndex);
+        } else {
+            // Nothing selected.
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+//            alert.initOwner(mainApp.getPrimaryStage());
+            alert.initOwner(mainApp.getWindow());
+            alert.setTitle("No Selection");
+            alert.setHeaderText("No Person Selected");
+            alert.setContentText("Please select a person in the table.");
+
+            alert.showAndWait();
         }
     }
 }
