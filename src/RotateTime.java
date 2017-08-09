@@ -5,38 +5,36 @@ public class RotateTime {
     private static final double circumference = 296.8; //длина окружности моего колеса в см
 
     public static void main(String[] args) {
-        double rotateTime;
+
+        //пусть колосе делает полный оборот за 1 секу, тогда я проеду 296.8 сантиметров.
+        //за какое время должно делать оборот колесо что-бы двигаться со скоростью 20 км/ч
+
+        double speedPerHour; //km/h
         double cmPerSecond;
-        double cmPerHour;
-        double kmPerHour;
+        double rotateTime;
+        double rotatePerSecond;
 
-        for (double i = 0.1; i < 5; i += 0.1) {
-            rotateTime = i;
-            cmPerSecond = calcLengthPerOneSecond(rotateTime);
-            cmPerHour  = calcLengthPerHoure(cmPerSecond);
-            kmPerHour  = convertCMtoKM(cmPerHour);
-
-//            System.out.println("При обороте колеса за " + rotateTime + " сек" +
-//                    "скорость будет равна " + kmPerHour + " км в час.");
+        for (int i = 10; i < 30; i++) {
+            speedPerHour = i;
+            cmPerSecond      = convertToCentimeterPerSecond(speedPerHour);
+            rotateTime       = circumference / cmPerSecond;
+            rotatePerSecond  = cmPerSecond / circumference;
 
             System.out.format("При обороте колеса за %.2f сек" +
-                       " скорость будет равна %.2f км в час.\n", rotateTime, kmPerHour);
+                    " скорость будет равна %.2f км в час. ", rotateTime, speedPerHour);
+
+            System.out.format("Колесо будет делать %.2f оборотов в секунду\n", rotatePerSecond);
         }
     }
 
-    //сколько см колесо проезжает за одну секунду
-    private static double calcLengthPerOneSecond(double fullRotateTime){
-        return (circumference * 1)/fullRotateTime;
+    //конвертируем км/ч в см/с
+    private static double convertToCentimeterPerSecond(double speedPerHour) {
+        return ((speedPerHour * 1000) * 100) / 3600;
     }
 
-    private static double calcLengthPerHoure(double lengthPerSecond){
-        return 3600 * lengthPerSecond;
-    }
-
-    private static double convertCMtoKM(double lengthPerHoure){
-        int meter = 100; //cm
-        int kiloMeter = 1000; //meters
-
-        return lengthPerHoure / (meter * kiloMeter);
+    //конвертим км/ч в м/с
+    private static double convertKMPerHourToMeterPerSecond(double speedPerHour) {
+        return (speedPerHour * 1000) / 3600;
     }
 }
+
