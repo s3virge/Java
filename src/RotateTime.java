@@ -17,8 +17,8 @@ public class RotateTime {
         for (int i = 10; i < 30; i++) {
             speedPerHour = i;
             cmPerSecond      = convertToCentimeterPerSecond(speedPerHour);
-            rotateTime       = circumference / cmPerSecond;
-            rotatePerSecond  = cmPerSecond / circumference;
+            rotateTime       = circumference / cmPerSecond; //Пропорция. Время оборота колеса
+            rotatePerSecond  = cmPerSecond / circumference; //сколько колесо делает оборотов
 
             System.out.format("При обороте колеса за %.2f сек" +
                     " скорость будет равна %.2f км в час. ", rotateTime, speedPerHour);
