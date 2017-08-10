@@ -27,7 +27,7 @@ public class PersonOverviewController {
     @FXML
     private Label phoneNumber;
     @FXML
-    private Label adress;
+    private Label address;
     @FXML
     private Label note;
 //    @FXML
@@ -87,7 +87,7 @@ public class PersonOverviewController {
             firstNameLabel.setText(person.getPropFirstName());
             lastNameLabel.setText(person.getPropLastName());
             phoneNumber.setText(person.getPropPhoneNumber());
-            adress.setText(person.getPropAdress());
+            address.setText(person.getPropAdress());
             note.setText(person.getPropNote());
         }
         else {
@@ -95,7 +95,7 @@ public class PersonOverviewController {
             firstNameLabel.setText("");
             lastNameLabel.setText("");
             phoneNumber.setText("");
-            adress.setText("");
+            address.setText("");
             note.setText("");
         }
     }
@@ -108,7 +108,8 @@ public class PersonOverviewController {
         int selectedIndex = personTable.getSelectionModel().getSelectedIndex();
         if (selectedIndex >= 0) {
             personTable.getItems().remove(selectedIndex);
-        } else {
+        }
+        else {
             // Nothing selected.
             Alert alert = new Alert(Alert.AlertType.WARNING);
 //            alert.initOwner(mainApp.getPrimaryStage());
@@ -122,30 +123,41 @@ public class PersonOverviewController {
     }
 
     /**
-     * Fills all text fields to show details about the person.
-     * If the specified person is null, all text fields are cleared.
-     *
-     * @param person the person or null
+     * Called when the user clicks the new button. Opens a dialog to edit
+     * details for a new person.
      */
-    private void showPersonDetails(Person person) {
-        if (person != null) {
-            // Fill the labels with info from the person object.
-            firstNameLabel.setText(person.getFirstName());
-            lastNameLabel.setText(person.getLastName());
-            streetLabel.setText(person.getStreet());
-            postalCodeLabel.setText(Integer.toString(person.getPostalCode()));
-            cityLabel.setText(person.getCity());
+    @FXML
+    private void handleNewPerson() {
+        Person tempPerson = new Person();
+        boolean okClicked = mainApp.showPersonEditDialog(tempPerson);
+        if (okClicked) {
+            mainApp.getPersonData().add(tempPerson);
+        }
+    }
 
-            // TODO: We need a way to convert the birthday into a String!
-            // birthdayLabel.setText(...);
-        } else {
-            // Person is null, remove all the text.
-            firstNameLabel.setText("");
-            lastNameLabel.setText("");
-            streetLabel.setText("");
-            postalCodeLabel.setText("");
-            cityLabel.setText("");
-            birthdayLabel.setText("");
+    /**
+     * Called when the user clicks the edit button. Opens a dialog to edit
+     * details for the selected person.
+     */
+    @FXML
+    private void handleEditPerson() {
+        Person selectedPerson = personTable.getSelectionModel().getSelectedItem();
+        if (selectedPerson != null) {
+            boolean okClicked = mainApp.showPersonEditDialog(selectedPerson);
+            if (okClicked) {
+                showPersonDetails(selectedPerson);
+            }
+
+        }
+        else {
+            // Nothing selected.
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.initOwner(mainApp.getPrimaryStage());
+            alert.setTitle("No Selection");
+            alert.setHeaderText("No Person Selected");
+            alert.setContentText("Please select a person in the table.");
+
+            alert.showAndWait();
         }
     }
 }
