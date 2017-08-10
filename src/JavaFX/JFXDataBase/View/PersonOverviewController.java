@@ -89,11 +89,6 @@ public class PersonOverviewController {
             phoneNumber.setText(person.getPropPhoneNumber());
             adress.setText(person.getPropAdress());
             note.setText(person.getPropNote());
-//            birthdayLabel.setText(DateUtil.format(person.getBirthday()));
-
-            //////////////////////////////
-            /* У меня совсем другие поля*/
-            //////////////////////////////
         }
         else {
             // Person is null, remove all the text.
@@ -102,7 +97,6 @@ public class PersonOverviewController {
             phoneNumber.setText("");
             adress.setText("");
             note.setText("");
-//            birthdayLabel.setText("");
         }
     }
 
@@ -124,6 +118,34 @@ public class PersonOverviewController {
             alert.setContentText("Please select a person in the table.");
 
             alert.showAndWait();
+        }
+    }
+
+    /**
+     * Fills all text fields to show details about the person.
+     * If the specified person is null, all text fields are cleared.
+     *
+     * @param person the person or null
+     */
+    private void showPersonDetails(Person person) {
+        if (person != null) {
+            // Fill the labels with info from the person object.
+            firstNameLabel.setText(person.getFirstName());
+            lastNameLabel.setText(person.getLastName());
+            streetLabel.setText(person.getStreet());
+            postalCodeLabel.setText(Integer.toString(person.getPostalCode()));
+            cityLabel.setText(person.getCity());
+
+            // TODO: We need a way to convert the birthday into a String!
+            // birthdayLabel.setText(...);
+        } else {
+            // Person is null, remove all the text.
+            firstNameLabel.setText("");
+            lastNameLabel.setText("");
+            streetLabel.setText("");
+            postalCodeLabel.setText("");
+            cityLabel.setText("");
+            birthdayLabel.setText("");
         }
     }
 }
