@@ -73,7 +73,6 @@ public class MainApp extends Application {
         catch (IOException e) {
             e.printStackTrace();
         }
-
     }
 
     private void showPersonOverview(){
@@ -93,6 +92,14 @@ public class MainApp extends Application {
     }
 
     public Stage getWindow() {
+        return window;
+    }
+
+    /**
+     * Returns the main stage.
+     * @return
+     */
+    public Stage getPrimaryStage() {
         return window;
     }
 }

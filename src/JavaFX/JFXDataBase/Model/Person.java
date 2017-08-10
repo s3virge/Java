@@ -20,12 +20,12 @@ import javafx.beans.property.StringProperty;
  */
 public class Person {
 
-    private final StringProperty firstName;
-    private final StringProperty lastName;
-    private final StringProperty street;
-    private final IntegerProperty postalCode;
-    private final StringProperty city;
-    private final ObjectProperty<LocalDate> birthday;
+    private final StringProperty propFirstName;
+    private final StringProperty propLastName;
+    private final StringProperty propPhoneNumber;
+    //private final IntegerProperty postalCode;
+    private final StringProperty propAdress;
+    private final StringProperty propNote;
 
     /**
      * Default constructor.
@@ -37,90 +37,77 @@ public class Person {
     /**
      * Constructor with some initial data.
      *
-     * @param firstName
-     * @param lastName
+     * @param propFirstName
+     * @param propLastName
      */
-    public Person(String firstName, String lastName) {
-        this.firstName  = new SimpleStringProperty(firstName);
-        this.lastName   = new SimpleStringProperty(lastName);
+    public Person(String propFirstName, String propLastName) {
+        this.propFirstName = new SimpleStringProperty(propFirstName);
+        this.propLastName = new SimpleStringProperty(propLastName);
 
         // Some initial dummy data, just for convenient testing.
-        this.street     = new SimpleStringProperty("some street");
-        this.postalCode = new SimpleIntegerProperty(1234);
-        this.city       = new SimpleStringProperty("some city");
-        this.birthday   = new SimpleObjectProperty<LocalDate>(LocalDate.of(1999, 2, 21));
-
+        this.propPhoneNumber = new SimpleStringProperty("315-10-20");
+        //this.propAdress = new SimpleIntegerProperty(1234);
+        this.propAdress = new SimpleStringProperty("Москальский проспект");
+        this.propNote = new SimpleStringProperty("some Note");
     }
 
-    public String getFirstName() {
-        return firstName.get();
+    public String getPropFirstName() {
+        return propFirstName.get();
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName.set(firstName);
+    public void setPropFirstName(String propFirstName) {
+        this.propFirstName.set(propFirstName);
     }
 
-    public StringProperty firstNameProperty() {
-        return firstName;
+    public StringProperty propFirstNameProperty() {
+        return propFirstName;
     }
 
-    public String getLastName() {
-        return lastName.get();
+    public String getPropLastName() {
+        return propLastName.get();
     }
 
-    public void setLastName(String lastName) {
-        this.lastName.set(lastName);
+    public void setPropLastName(String propLastName) {
+        this.propLastName.set(propLastName);
     }
 
-    public StringProperty lastNameProperty() {
-        return lastName;
+    public StringProperty propLastNameProperty() {
+        return propLastName;
     }
 
-    public String getStreet() {
-        return street.get();
+    public String getPropPhoneNumber() {
+        return propPhoneNumber.get();
     }
 
-    public void setStreet(String street) {
-        this.street.set(street);
+    public void setPropPhoneNumber(String propPhoneNumber) {
+        this.propPhoneNumber.set(propPhoneNumber);
     }
 
-    public StringProperty streetProperty() {
-        return street;
+    public StringProperty propPhoneNumberProperty() {
+        return propPhoneNumber;
     }
 
-    public int getPostalCode() {
-        return postalCode.get();
+    public String getPropAdress() {
+        return propAdress.get();
     }
 
-    public void setPostalCode(int postalCode) {
-        this.postalCode.set(postalCode);
+    public void setPropAdress(String propAdress) {
+        this.propAdress.set(propAdress);
     }
 
-    public IntegerProperty postalCodeProperty() {
-        return postalCode;
+    public StringProperty propAdressProperty() {
+        return propAdress;
     }
 
-    public String getCity() {
-        return city.get();
+    public String getPropNote() {
+        return propNote.get();
     }
 
-    public void setCity(String city) {
-        this.city.set(city);
+    public void setPropNote(String propNote) {
+        this.propNote.set(propNote);
     }
 
-    public StringProperty cityProperty() {
-        return city;
-    }
-
-    public LocalDate getBirthday() {
-        return birthday.get();
-    }
-
-    public void setBirthday(LocalDate birthday) {
-        this.birthday.set(birthday);
-    }
-
-    public ObjectProperty<LocalDate> birthdayProperty() {
-        return birthday;
+    public StringProperty propNoteProperty() {
+        return propNote;
     }
 }

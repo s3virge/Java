@@ -49,18 +49,18 @@
                         <Label text="Last Name" GridPane.rowIndex="1" />
                         <Label fx:id="lastNameLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                         <Label text="Phone Number" GridPane.rowIndex="2" />
-                        <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Label fx:id="phoneNumber" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                         <Label text="Address" GridPane.rowIndex="3" />
-                        <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <Label fx:id="adress" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                         <Label text="Note" GridPane.rowIndex="4" />
-                        <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <Label fx:id="note" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                      </children>
                   </GridPane>
                   <ButtonBar layoutX="64.0" layoutY="318.0" prefHeight="40.0" prefWidth="242.0">
                     <buttons>
                       <Button mnemonicParsing="false" text="New" />
                         <Button mnemonicParsing="false" text="Edit" />
-                        <Button mnemonicParsing="false" text="Delete" />
+                        <Button mnemonicParsing="false" onAction="#handleDeletePerson" text="Delete" />
                     </buttons>
                   </ButtonBar>
                </children></AnchorPane>
