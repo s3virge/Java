@@ -45,6 +45,7 @@ public class MainApp extends Application {
      * Returns the data as an observable list of Persons.
      * @return
      */
+    //наблюдаемый список
     public ObservableList<Person> getPersonData() {
         return personData;
     }
