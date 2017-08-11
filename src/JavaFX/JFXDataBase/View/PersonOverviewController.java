@@ -30,10 +30,8 @@ public class PersonOverviewController {
     private Label address;
     @FXML
     private Label note;
-//    @FXML
-//    private Label birthdayLabel;
 
-    // Reference to the main application.
+    // Reference to the main class.
     private MainApp mainApp;
 
     /**
