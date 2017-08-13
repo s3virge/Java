@@ -1,15 +1,9 @@
-package JavaFX.JFXDataBase.Model;
+package JavaFX.ClientList.Model;
 
 /**
  * Created by S3ViRGE on 07.08.2017.
  */
 
-import java.time.LocalDate;
-
-import javafx.beans.property.IntegerProperty;
-import javafx.beans.property.ObjectProperty;
-import javafx.beans.property.SimpleIntegerProperty;
-import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 

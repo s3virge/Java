@@ -1,9 +1,9 @@
-package JavaFX.JFXDataBase.View;
+package JavaFX.ClientList.View;
 
 /**
  * Created by s3virge on 10.08.17.
  */
-import JavaFX.JFXDataBase.Model.Person;
+import JavaFX.ClientList.Model.Person;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;

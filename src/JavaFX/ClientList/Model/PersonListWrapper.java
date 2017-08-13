@@ -1,4 +1,4 @@
-package JavaFX.JFXDataBase.Model;
+package JavaFX.ClientList.Model;
 
 /**
  * Created by s3virge on 11.08.17.
