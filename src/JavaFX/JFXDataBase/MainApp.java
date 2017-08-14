@@ -82,17 +82,16 @@ public class MainApp extends Application {
     public void initRootLayout() {
         try {
             // Load root layout from fxml file.
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(MainApp.class
-                    .getResource("View/RootLayout.fxml"));
-            rootLayout = loader.load();
+            FXMLLoader fxmlLayout = new FXMLLoader();
+            fxmlLayout.setLocation(MainApp.class.getResource("View/RootLayout.fxml"));
+            rootLayout = fxmlLayout.load();
 
             // Show the scene containing the root layout.
             Scene scene = new Scene(rootLayout);
             window.setScene(scene);
 
             // Give the controller access to the main app.
-            RootLayoutController controller = loader.getController();
+            RootLayoutController controller = fxmlLayout.getController();
             controller.setMainApp(this);
 
             window.show();
@@ -237,7 +236,8 @@ public class MainApp extends Application {
             // Save the file path to the registry.
             setPersonFilePath(file);
 
-        } catch (Exception e) { // catches ANY exception
+        }
+        catch (Exception e) { // catches ANY exception
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
             alert.setHeaderText("Could not load data");
@@ -268,7 +268,8 @@ public class MainApp extends Application {
 
             // Save the file path to the registry.
             setPersonFilePath(file);
-        } catch (Exception e) { // catches ANY exception
+        }
+        catch (Exception e) { // catches ANY exception
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
             alert.setHeaderText("Could not save data");

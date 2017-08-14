@@ -4,12 +4,6 @@ package JavaFX.JFXDataBase.Model;
  * Created by S3ViRGE on 07.08.2017.
  */
 
-import java.time.LocalDate;
-
-import javafx.beans.property.IntegerProperty;
-import javafx.beans.property.ObjectProperty;
-import javafx.beans.property.SimpleIntegerProperty;
-import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
@@ -20,12 +14,12 @@ import javafx.beans.property.StringProperty;
  */
 public class Person {
 
-    private final StringProperty propFirstName;
-    private final StringProperty propLastName;
-    private final StringProperty propPhoneNumber;
+    private final StringProperty firstName;
+    private final StringProperty lastName;
+    private final StringProperty phoneNumber;
     //private final IntegerProperty postalCode;
-    private final StringProperty propAdress;
-    private final StringProperty propNote;
+    private final StringProperty address;
+    private final StringProperty note;
 
     /**
      * Default constructor.
@@ -37,77 +31,77 @@ public class Person {
     /**
      * Constructor with some initial data.
      *
-     * @param propFirstName
-     * @param propLastName
+     * @param strFirstName
+     * @param strLastName
      */
-    public Person(String propFirstName, String propLastName) {
-        this.propFirstName = new SimpleStringProperty(propFirstName);
-        this.propLastName = new SimpleStringProperty(propLastName);
+    public Person(String strFirstName, String strLastName) {
+        this.firstName = new SimpleStringProperty(strFirstName);
+        this.lastName = new SimpleStringProperty(strLastName);
 
         // Some initial dummy data, just for convenient testing.
-        this.propPhoneNumber = new SimpleStringProperty("315-10-20");
-        //this.propAdress = new SimpleIntegerProperty(1234);
-        this.propAdress = new SimpleStringProperty("Москальский проспект");
-        this.propNote = new SimpleStringProperty("some Note");
+        this.phoneNumber = new SimpleStringProperty("315-10-20");
+        //this.address = new SimpleIntegerProperty(1234);
+        this.address = new SimpleStringProperty("Москальский проспект");
+        this.note = new SimpleStringProperty("some Note");
     }
 
-    public String getPropFirstName() {
-        return propFirstName.get();
+    public String getFirstName() {
+        return firstName.get();
     }
 
-    public void setPropFirstName(String propFirstName) {
-        this.propFirstName.set(propFirstName);
+    public void setFirstName(String firstName) {
+        this.firstName.set(firstName);
     }
 
-    public StringProperty propFirstNameProperty() {
-        return propFirstName;
+    public StringProperty firstNameProperty() {
+        return firstName;
     }
 
-    public String getPropLastName() {
-        return propLastName.get();
+    public String getLastName() {
+        return lastName.get();
     }
 
-    public void setPropLastName(String propLastName) {
-        this.propLastName.set(propLastName);
+    public void setLastName(String lastName) {
+        this.lastName.set(lastName);
     }
 
-    public StringProperty propLastNameProperty() {
-        return propLastName;
+    public StringProperty lastNameProperty() {
+        return lastName;
     }
 
-    public String getPropPhoneNumber() {
-        return propPhoneNumber.get();
+    public String getPhoneNumber() {
+        return phoneNumber.get();
     }
 
-    public void setPropPhoneNumber(String propPhoneNumber) {
-        this.propPhoneNumber.set(propPhoneNumber);
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber.set(phoneNumber);
     }
 
-    public StringProperty propPhoneNumberProperty() {
-        return propPhoneNumber;
+    public StringProperty phoneNumberProperty() {
+        return phoneNumber;
     }
 
-    public String getPropAdress() {
-        return propAdress.get();
+    public String getAddress() {
+        return address.get();
     }
 
-    public void setPropAdress(String propAdress) {
-        this.propAdress.set(propAdress);
+    public void setAddress(String address) {
+        this.address.set(address);
     }
 
-    public StringProperty propAdressProperty() {
-        return propAdress;
+    public StringProperty addressProperty() {
+        return address;
     }
 
-    public String getPropNote() {
-        return propNote.get();
+    public String getNote() {
+        return note.get();
     }
 
-    public void setPropNote(String propNote) {
-        this.propNote.set(propNote);
+    public void setNote(String note) {
+        this.note.set(note);
     }
 
-    public StringProperty propNoteProperty() {
-        return propNote;
+    public StringProperty noteProperty() {
+        return note;
     }
 }
