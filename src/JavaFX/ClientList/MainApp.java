@@ -1,10 +1,10 @@
-package JavaFX.JFXDataBase;
+package JavaFX.ClientList;
 
-import JavaFX.JFXDataBase.Model.Person;
-import JavaFX.JFXDataBase.Model.PersonListWrapper;
-import JavaFX.JFXDataBase.View.PersonEditDlgController;
-import JavaFX.JFXDataBase.View.PersonOverviewController;
-import JavaFX.JFXDataBase.View.RootLayoutController;
+import JavaFX.ClientList.Model.Person;
+import JavaFX.ClientList.Model.PersonListWrapper;
+import JavaFX.ClientList.View.PersonEditDlgController;
+import JavaFX.ClientList.View.PersonOverviewController;
+import JavaFX.ClientList.View.RootLayoutController;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -254,8 +254,7 @@ public class MainApp extends Application {
      */
     public void savePersonDataToFile(File file) {
         try {
-            JAXBContext context = JAXBContext
-                    .newInstance(PersonListWrapper.class);
+            JAXBContext context = JAXBContext.newInstance(PersonListWrapper.class);
             Marshaller m = context.createMarshaller();
             m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
 
@@ -278,5 +277,4 @@ public class MainApp extends Application {
             alert.showAndWait();
         }
     }
-
 }

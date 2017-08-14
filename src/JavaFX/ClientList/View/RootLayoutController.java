@@ -1,4 +1,4 @@
-package JavaFX.JFXDataBase.View;
+package JavaFX.ClientList.View;
 
 /**
  * Created by s3virge on 11.08.17.
@@ -6,7 +6,7 @@ package JavaFX.JFXDataBase.View;
 
 import java.io.File;
 
-import JavaFX.JFXDataBase.MainApp;
+import JavaFX.ClientList.MainApp;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
