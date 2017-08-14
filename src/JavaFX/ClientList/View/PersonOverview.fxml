@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="371.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.131" xmlns:fx="http://javafx.com/fxml/1" fx:controller="JavaFX.JFXDataBase.View.PersonOverviewController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="371.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1" fx:controller="JavaFX.ClientList.View.PersonOverviewController">
    <children>
       <SplitPane dividerPositions="0.3695652173913043" layoutX="117.0" layoutY="109.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <items>
@@ -49,11 +49,11 @@
                         <Label text="Last Name" GridPane.rowIndex="1" />
                         <Label fx:id="lastNameLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                         <Label text="Phone Number" GridPane.rowIndex="2" />
-                        <Label fx:id="phoneNumber" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Label fx:id="phoneNumberLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                         <Label text="Address" GridPane.rowIndex="3" />
-                        <Label fx:id="address" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <Label fx:id="addressLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                         <Label text="Note" GridPane.rowIndex="4" />
-                        <Label fx:id="note" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <Label fx:id="noteLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                      </children>
                   </GridPane>
                   <ButtonBar layoutX="64.0" layoutY="318.0" prefHeight="40.0" prefWidth="242.0">
