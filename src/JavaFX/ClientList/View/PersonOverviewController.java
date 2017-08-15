@@ -25,11 +25,11 @@ public class PersonOverviewController {
     @FXML
     private Label lastNameLabel;
     @FXML
-    private Label phoneNumber;
+    private Label phoneNumberLabel;
     @FXML
-    private Label address;
+    private Label addressLabel;
     @FXML
-    private Label note;
+    private Label noteLabel;
 
     // Reference to the main class.
     private MainApp mainApp;
@@ -48,10 +48,9 @@ public class PersonOverviewController {
     @FXML
     private void initialize() {
         // Initialize the person table with the two columns.
-        firstNameColumn.setCellValueFactory(
-                cellData -> cellData.getValue().propFirstNameProperty());
-        lastNameColumn.setCellValueFactory(
-                cellData -> cellData.getValue().propLastNameProperty());
+        firstNameColumn.setCellValueFactory(cellData -> cellData.getValue().firstNameProperty());
+
+        lastNameColumn.setCellValueFactory(cellData -> cellData.getValue().lastNameProperty());
 
         // Clear person details.
         showPersonDetails(null);
@@ -82,19 +81,19 @@ public class PersonOverviewController {
     private void showPersonDetails(Person person) {
         if (person != null) {
             // Fill the labels with info from the person object.
-            firstNameLabel.setText(person.getPropFirstName());
-            lastNameLabel.setText(person.getPropLastName());
-            phoneNumber.setText(person.getPropPhoneNumber());
-            address.setText(person.getPropAdress());
-            note.setText(person.getPropNote());
+            firstNameLabel.setText(person.getFirstName());
+            lastNameLabel.setText(person.getLastName());
+            phoneNumberLabel.setText(person.getPhoneNumber());
+            addressLabel.setText(person.getAddress());
+            noteLabel.setText(person.getNote());
         }
         else {
             // Person is null, remove all the text.
             firstNameLabel.setText("");
             lastNameLabel.setText("");
-            phoneNumber.setText("");
-            address.setText("");
-            note.setText("");
+            phoneNumberLabel.setText("");
+            addressLabel.setText("");
+            noteLabel.setText("");
         }
     }
 

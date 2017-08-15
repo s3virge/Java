@@ -57,11 +57,11 @@ public class PersonEditDlgController {
     public void setPerson(Person person) {
         this.person = person;
 
-        firstNameField.setText(person.getPropFirstName());
-        lastNameField.setText(person.getPropLastName());
-        phoneNumberField.setText(person.getPropPhoneNumber());
-        addressField.setText(person.getPropAdress());
-        noteField.setText(person.getPropNote());
+        firstNameField.setText(person.getFirstName());
+        lastNameField.setText(person.getLastName());
+        phoneNumberField.setText(person.getPhoneNumber());
+        addressField.setText(person.getAddress());
+        noteField.setText(person.getNote());
         }
 
     /**
@@ -79,11 +79,11 @@ public class PersonEditDlgController {
     @FXML
     private void handleOk() {
         if (isInputValid()) {
-            person.setPropFirstName(firstNameField.getText());
-            person.setPropLastName(lastNameField.getText());
-            person.setPropPhoneNumber(phoneNumberField.getText());
-            person.setPropAdress(addressField.getText());
-            person.setPropNote(noteField.getText());
+            person.setFirstName(firstNameField.getText());
+            person.setLastName(lastNameField.getText());
+            person.setPhoneNumber(phoneNumberField.getText());
+            person.setAddress(addressField.getText());
+            person.setNote(noteField.getText());
 
             okClicked = true;
             dialogStage.close();
